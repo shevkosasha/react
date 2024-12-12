@@ -1,24 +1,30 @@
 import logo from './logo.svg';
 import './App.css';
-const elem = <h2>Hello World</h2>
+
+const Header = () => {
+  return  <h2>Hello World</h2>;
+}
+
+const Field = () => {
+  const holder = "type here";
+  const fieldStyle = {width: '300px'};
+  return <input placeholder={holder} style={fieldStyle}/>
+}
+
+function Btn(text){
+  // const txt = "log in";
+  console.log(text);
+  const txt = () => "log in";
+  const logged = true;
+  return <button>{logged ? "enter" : txt()}</button>
+}
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header/>
+      <Field/>
+      <Btn text='test'/>
     </div>
   );
 }
